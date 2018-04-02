@@ -139,11 +139,13 @@ public:
         
     }
     
+    //get number of elements currently stored
     int get_size() const
     {
         return t_size;
     }
     
+    //return true if no elements are currently stored
     bool isEmpty () const
     {
         return t_size == 0;
@@ -156,6 +158,8 @@ private:
     int memsize; //number of allocated memory slots
     T * array; //internal array
     
+    //if the allocated memory is more than twice the occupied memory, halve the allocated memory 
+    //if the allocated and occupied memory are equal, double the allocated memory
     void resize ()
     {
         if (t_size < (memsize >> 1))
