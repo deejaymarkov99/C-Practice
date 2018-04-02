@@ -1,6 +1,5 @@
 //
 //  dynarray.hpp
-//  Sorting
 //
 //  Created by Bingo Star on 2018-03-24.
 //  Copyright © 2018 GWBRecords©™®. All rights reserved.
