@@ -1,6 +1,5 @@
 //
 //  smrtptr.h
-//  Sorting
 //
 //  Created by Damjan Markovic on 2018-03-25.
 //  Copyright © 2018 GWBRecords©™®. All rights reserved.
