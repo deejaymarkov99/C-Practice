@@ -1,6 +1,5 @@
 //
 //  heap.h
-//  Sorting
 //
 //  Created by Bingo Star on 2018-03-18.
 //  Copyright © 2018 GWBRecords©™®. All rights reserved.
