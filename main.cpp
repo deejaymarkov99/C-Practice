@@ -1,6 +1,5 @@
 //
 //  main.cpp
-//  Sorting
 //
 //  Created by Damjan Markovic on 2018-03-05.
 //  Copyright © 2018 GWBRecords©™®. All rights reserved.
