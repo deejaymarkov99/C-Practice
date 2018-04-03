@@ -1,6 +1,8 @@
 //
 //  smrtptr.h
 //
+//  An implementation of a very basic smart pointer in C++ using reference counting. Things to consider: thread safety?
+//
 //  Created by Damjan Markovic on 2018-03-25.
 //  Copyright © 2018 GWBRecords©™®. All rights reserved.
 //
