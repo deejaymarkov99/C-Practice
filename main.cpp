@@ -1,6 +1,10 @@
 //
 //  main.cpp
 //
+//  Contains recursive implementations of quicksort and mergesort using a more c-related style. 
+//
+//  To-do: Implement heapsort and design a simple test suite to make sure everything is as correct-as possible.
+//
 //  Created by Damjan Markovic on 2018-03-05.
 //  Copyright © 2018 GWBRecords©™®. All rights reserved.
 //
