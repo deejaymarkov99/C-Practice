@@ -12,16 +12,61 @@ template <class T>
 class SmrtPtr {
 
 public:
-    SmrtPtr(T * d) : data(d) {}
-    ~SmrtPtr() { delete data; }
     
-    T& operator* () const { return *data; }
-    T* operator-> () const { return data; }
+    //default constructor
+    SmrtPtr() : data(0)
+    {
+        *references = 1;
+    }
+    
+    //wrapper constructor
+    SmrtPtr(T * d) : data(d)
+    {
+        *references = 1;
+    }
+    
+    //copy constructor
+    SmrtPtr(const SmrtPtr& sp) : data(sp.data), references(sp.references)
+    {
+        *references++;
+    }
+    
+    //destructor
+    ~SmrtPtr()
+    {
+        if (--*references == 0)
+        {
+            delete data;
+            delete references;
+        }
+    }
+    
+    //copy assignment
+    SmrtPtr& operator= (const SmrtPtr& sp)
+    {
+        if(this != sp)
+        {
+            
+            if (sp.data != 0) { delete data; }
+            delete references;
+            
+            data = sp.data;
+            references = sp.references;
+            *references++;
+            
+        }
+        
+        return *this;
+    }
+    
+    T& operator* () const { return *data; } //derefence operator
+    T* operator-> () const { return data; } //reference operator
+    
     
 private:
-    T * data;
+    T * data; //the data pointed to
+    int * references; //number of pointers currently pointing to this data
 
 };
-
 
 #endif /* smrtptr_h */
