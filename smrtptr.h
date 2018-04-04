@@ -16,10 +16,7 @@ class SmrtPtr {
 public:
     
     //default constructor
-    SmrtPtr() : data(0)
-    {
-        *references = 1;
-    }
+    SmrtPtr() : data(0), references(0) {}
     
     //wrapper constructor
     SmrtPtr(T * d) : data(d)
@@ -36,11 +33,7 @@ public:
     //destructor
     ~SmrtPtr()
     {
-        if (--*references == 0)
-        {
-            delete data;
-            delete references;
-        }
+        release();
     }
     
     //copy assignment
@@ -48,14 +41,10 @@ public:
     {
         if(this != sp)
         {
-            
-            if (sp.data != 0) { delete data; }
-            delete references;
-            
+            release();
             data = sp.data;
             references = sp.references;
             *references++;
-            
         }
         
         return *this;
@@ -68,6 +57,15 @@ public:
 private:
     T * data; //the data pointed to
     int * references; //number of pointers currently pointing to this data
+    
+    void release() 
+    {
+        if (--*references == 0)
+        {
+            delete data;
+            delete references;
+        }
+    }
 
 };
 
